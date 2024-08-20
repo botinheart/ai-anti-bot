@@ -6,15 +6,15 @@ import (
 )
 
 const (
-	CfgFileName = "config.yml"
+	CfgFileName = "antibot.yml"
 	CfgFileType = "yml"
 )
 
 func init() {
 	viper.SetConfigName(CfgFileName)
 	viper.SetConfigType(CfgFileType)
-	viper.AddConfigPath(".")
-	viper.AddConfigPath("./data")
+	viper.AddConfigPath("/etc")
+	//viper.AddConfigPath("./data")
 	err := viper.ReadInConfig()
 	if err != nil {
 		log.Fatalf("%s\n", err.Error())
